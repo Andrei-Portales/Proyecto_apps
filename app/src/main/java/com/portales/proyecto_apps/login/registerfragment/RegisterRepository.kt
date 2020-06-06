@@ -3,6 +3,8 @@ package com.portales.proyecto_apps.login.registerfragment
 import android.content.Context
 import android.widget.Toast
 import androidx.navigation.NavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.portales.proyecto_apps.R
@@ -11,25 +13,28 @@ import com.portales.proyecto_apps.R
 class RegisterRepository {
 
     private val db = FirebaseFirestore.getInstance()
+    private val auth = FirebaseAuth.getInstance()
 
     fun Register(
         model: RegisterModel,
         context: Context,
         navController: NavController
     ){
-        db.collection("users").document(model.email.toString()).get()
+        auth.createUserWithEmailAndPassword(model.email.toString(), model.password.toString())
             .addOnCompleteListener {
             if (it.isSuccessful){
-                val result = it.result?.get("email").toString()
-                if (result.equals(model.email)){
-                    Toast.makeText(context, "Ya exite un usuario con ese correo", Toast.LENGTH_LONG).show()
-                }else{
-                    registro(model, context, navController)
-                }
+                val profileUpdates = UserProfileChangeRequest.Builder()
+                    .setDisplayName(model.name.toString())
+                    .build()
+                val user = auth.currentUser
+                user?.updateProfile(profileUpdates)
+                registro(model, context, navController)
             }else{
-                Toast.makeText(context,"Fallo consulta a servidor", Toast.LENGTH_LONG).show()
+                Toast.makeText(context,"Usuario ya existe", Toast.LENGTH_LONG).show()
             }
-        }
+            }.addOnFailureListener {
+                Toast.makeText(context,"No se pudo crear Usuario1", Toast.LENGTH_LONG).show()
+            }
     }
     fun registro(
         model: RegisterModel,
