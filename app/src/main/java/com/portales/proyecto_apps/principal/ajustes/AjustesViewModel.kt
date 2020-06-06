@@ -1,4 +1,11 @@
 package com.portales.proyecto_apps.principal.ajustes
 
-class AjustesViewModel {
+import androidx.lifecycle.ViewModel
+
+class AjustesViewModel : ViewModel(){
+
+    private val AjustesUseCase = AjustesUseCase()
+
+
+
 }
