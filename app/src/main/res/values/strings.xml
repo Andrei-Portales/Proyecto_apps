@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Fit-me</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="registrarse_text">¿No tienes una cuenta? Registrate</string>
+    <string name="registrarse">Registrate</string>
+    <string name="iniciar_sesionbtn">Iniciar Sesion</string>
+    <string name="email">Email</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="nombre">Nombre</string>
+    <string name="Ccontrasena">Confirmar contraseña</string>
+    <string name="datos_fisicos">Datos fisicos</string>
+    <string name="fecha_nacimiento">Fecha de Nacimiento (dd/mm/yyyy)</string>
+    <string name="peso">Peso (En libras)</string>
+    <string name="altura">Altura (En metros)</string>
+    <string name="registrarme">Registrarme</string>
+    <string name="ya_tienes_cuenta">¿Ya tienes una cuenta? Inicia sesion</string>
+    <string name="Inicio">Inicio</string>
+    <string name="RutinaDiaria">Rutina diaria</string>
+    <string name="PublicarRutina">Publicar rutina</string>
+    <string name="rutinas_comunidad">Rutinas de comunidad</string>
+    <string name="RutinasFavs">Rutinas favoritas</string>
+    <string name="Ajustes">Ajustes</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+</resources>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="RegisterModel"
+            type="com.portales.proyecto_apps.login.registerfragment.RegisterModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".login.registerfragment.RegisterFragment">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|top"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/txtNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/text_input"
+                    android:ems="10"
+                    android:text="@={RegisterModel.name}"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/nombre"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/txtEmailR"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/text_input"
+                    android:ems="10"
+                    android:text="@={RegisterModel.email}"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="10dp"
+                    android:textColor="#000000" />
+
+
+                <EditText
+                    android:id="@+id/txtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/text_input"
+                    android:ems="10"
+                    android:text="@={RegisterModel.password}"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/contrasena"
+                    android:inputType="textPassword"
+                    android:paddingLeft="10dp"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/txtCPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/text_input"
+                    android:ems="10"
+                    android:text="@={RegisterModel.cpassword}"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/Ccontrasena"
+                    android:inputType="textPassword"
+                    android:paddingLeft="10dp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:text="@string/datos_fisicos"
+                    android:textColor="#4E4B4B"
+                    android:textSize="18sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/txtFechaNacimiento"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/text_input"
+                        android:ems="10"
+                        android:text="@={RegisterModel.birth}"
+                        android:enabled="false"
+                        android:gravity="start|center_vertical"
+                        android:hint="@string/fecha_nacimiento"
+                        android:inputType="date"
+                        android:paddingLeft="10dp"
+                        android:textColor="#000000"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/txtFechaLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/txtFechaNacimiento"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txtFechaNacimiento"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <EditText
+                    android:id="@+id/txtPeso"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:text="@={RegisterModel.weight}"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/text_input"
+                    android:ems="10"
+                    android:hint="@string/peso"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                    android:id="@+id/txtAltura"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@={RegisterModel.height}"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/text_input"
+                    android:ems="10"
+                    android:hint="@string/altura"
+                    android:inputType="numberDecimal" />
+
+                <Button
+                    android:id="@+id/btnRegistrarse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/boton_rojo"
+                    android:textColor="#FFFFFF"
+                    android:text="@string/registrarme" />
+
+                <TextView
+                    android:id="@+id/txtYaCuenta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:text="@string/ya_tienes_cuenta"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
