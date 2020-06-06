@@ -25,9 +25,9 @@
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_marginLeft="10dp"
-                android:layout_height="100dp"
                 android:layout_marginBottom="20dp"
                 app:srcCompat="@drawable/logoapp" />
         </LinearLayout>
@@ -41,22 +41,19 @@
             android:layout_marginLeft="10dp">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/txtUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#FFFFFF" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/txtUserEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#FFFFFF" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
