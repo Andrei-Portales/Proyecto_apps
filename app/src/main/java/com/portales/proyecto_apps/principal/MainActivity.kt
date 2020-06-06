@@ -35,8 +35,6 @@ class MainActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(action)
         action.syncState()
 
-
-
         updateUI(R.drawable.logoapp)
 
     }
