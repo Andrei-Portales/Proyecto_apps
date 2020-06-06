@@ -1,9 +1,8 @@
 package com.portales.proyecto_apps.login.loginfragment
 
-import android.app.Activity
 import android.app.Application
 import android.content.Context
-import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,10 +14,6 @@ import androidx.navigation.Navigation
 import com.google.android.material.snackbar.Snackbar
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.databinding.FragmentLoginBinding
-import com.portales.proyecto_apps.databinding.FragmentRegisterBinding
-import com.portales.proyecto_apps.login.registerfragment.RegisterViewModel
-import com.portales.proyecto_apps.principal.MainActivity
-import kotlinx.android.synthetic.main.fragment_login.view.*
 
 
 class loginFragment : Fragment() {
@@ -39,6 +34,9 @@ class loginFragment : Fragment() {
         listener = ActionListener()
         activity?.title = activity?.getString(R.string.iniciar_sesion)
         botones()
+        binding.progressLogin.getIndeterminateDrawable()
+            .setColorFilter(context?.getColor(R.color.colorPrimary)!!, PorterDuff.Mode.SRC_IN)
+        binding.progressLogin.visibility = View.GONE
         return binding.root
     }
 
@@ -58,7 +56,9 @@ class loginFragment : Fragment() {
                 }
                 binding.btnIniciarSesion -> {
                     if (binding.loginModel!!.isnotEmpty()){
-                        viewModel.Login(binding.loginModel!!, context as Context)
+                        binding.progressLogin.visibility = View.VISIBLE
+                        binding.btnIniciarSesion.visibility = View.GONE
+                        viewModel.Login(binding.loginModel!!, context as Context, binding.progressLogin, binding.btnIniciarSesion)
                     }else{
                         Snackbar.make(binding.root, "Campos vacios", Snackbar.LENGTH_SHORT).show()
                     }

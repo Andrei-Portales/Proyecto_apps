@@ -16,6 +16,17 @@
         android:background="#FFFFFF"
         tools:context=".login.loginfragment.loginFragment">
 
+        <ProgressBar
+            android:id="@+id/progressLogin"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
         <Button
             android:id="@+id/btnIniciarSesion"
             android:layout_width="0dp"
