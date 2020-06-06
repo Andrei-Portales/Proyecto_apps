@@ -46,7 +46,6 @@ class loginFragment : Fragment() {
     }
 
 
-
     inner class ActionListener : View.OnClickListener{
 
         override fun onClick(v: View?) {
