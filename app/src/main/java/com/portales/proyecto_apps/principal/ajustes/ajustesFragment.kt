@@ -1,5 +1,6 @@
 package com.portales.proyecto_apps.principal.ajustes
 
+import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.databinding.FragmentAjustesBinding
@@ -32,7 +34,7 @@ class ajustesFragment : Fragment() {
         binding.ajustesModel = AjustesModel(currentUser?.displayName!!, currentUser.email!!)
         viewModel =  ViewModelProvider.AndroidViewModelFactory.getInstance(activity?.application as Application).create(AjustesViewModel::class.java)
 
-
+        Glide.with(context as Activity).load(R.drawable.logoapp).into(binding.profileImage)
 
 
         return binding.root
