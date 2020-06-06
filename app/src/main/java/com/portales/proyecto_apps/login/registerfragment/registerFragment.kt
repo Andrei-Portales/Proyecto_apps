@@ -32,8 +32,7 @@ class registerFragment : Fragment() , DatePickerDialog.OnDateSetListener {
             savedInstanceState: Bundle?
         ): View? {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_register, container, false)
-            binding.registerModel = RegisterModel("Andrei Portales","andrei@gmail.com","123","123","20/01/2001",
-                "150","170")
+            binding.registerModel = RegisterModel()
             activity?.title = activity?.getString(R.string.registrarse)
             listener = ActionListener()
             botones()
@@ -63,10 +62,22 @@ class registerFragment : Fragment() , DatePickerDialog.OnDateSetListener {
                         Navigation.findNavController(binding.root).navigate(R.id.action_registerFragment_to_loginFragment)
                     }
                     binding.btnRegistrarse -> {
-                        if (binding.registerModel!!.isOk()){
-                            viewModel.register(binding.registerModel!!)
+                        if (binding.registerModel!!.areEmpty()){
+                            if (binding.registerModel!!.passLength()){
+                                if(binding.registerModel!!.comparePasswords()){
+                                    if (binding.registerModel!!.areNumbers()){
+                                        viewModel.register(binding.registerModel!!, context as Context,  Navigation.findNavController(binding.root))
+                                    }else{
+                                        Snackbar.make(binding.root, "Campos numericos no validos", Snackbar.LENGTH_SHORT).show()
+                                    }
+                                }else{
+                                    Snackbar.make(binding.root, "Contaseñas no coinciden", Snackbar.LENGTH_SHORT).show()
+                                }
+                            }else{
+                                Snackbar.make(binding.root, "Contaseña tiene que ser de 8 o mas caracteres", Snackbar.LENGTH_SHORT).show()
+                            }
                         }else{
-                            Snackbar.make(binding.root, "Campos Invalidos", Snackbar.LENGTH_SHORT).show()
+                            Snackbar.make(binding.root, "Campos vacios", Snackbar.LENGTH_SHORT).show()
                         }
                     }
 

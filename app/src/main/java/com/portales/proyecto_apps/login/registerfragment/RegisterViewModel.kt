@@ -1,14 +1,19 @@
 package com.portales.proyecto_apps.login.registerfragment
 
-import androidx.lifecycle.MutableLiveData
+import android.content.Context
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavController
 
 class RegisterViewModel : ViewModel() {
 
     val RegisterUseCase = RegisterUseCase()
 
-    fun register(model: RegisterModel){
-        RegisterUseCase.register(model)
+    fun register(
+        model: RegisterModel,
+        context: Context,
+        NavController: NavController
+    ){
+        RegisterUseCase.register(model, context, NavController)
     }
 
 }
