@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.portales.proyecto_apps.R
@@ -36,8 +37,20 @@ class ajustesFragment : Fragment() {
 
         Glide.with(context as Activity).load(R.drawable.logoapp).into(binding.profileImage)
 
+        botones()
 
         return binding.root
+    }
+
+    private fun botones(){
+        binding.apply {
+            btnChangePass.setOnClickListener {
+                Navigation.findNavController(binding.root).navigate(R.id.action_ajustesFragment_to_changePassFragment)
+            }
+            btnInfoUpdate.setOnClickListener {
+                Navigation.findNavController(binding.root).navigate(R.id.action_ajustesFragment_to_updateInfoFragment)
+            }
+        }
     }
 
 }
