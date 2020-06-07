@@ -46,7 +46,6 @@ class RegisterRepository {
         val user = HashMap<String, Any?>()
         user.put("name", model.name)
         user.put("email", model.email)
-        user.put("password", model.password)
         user.put("birth", model.birth)
         user.put("weight", model.weight.toFloat())
         user.put("height", model.height.toFloat())
