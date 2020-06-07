@@ -19,7 +19,6 @@ import androidx.navigation.Navigation
 import com.google.android.material.snackbar.Snackbar
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.databinding.FragmentUpdateInfoBinding
-import java.util.*
 
 class UpdateInfoFragment : Fragment() , DatePickerDialog.OnDateSetListener{
 
@@ -54,7 +53,8 @@ class UpdateInfoFragment : Fragment() , DatePickerDialog.OnDateSetListener{
         binding.btnRegistrarseChange.setOnClickListener {
             if (binding.updateInfoModel!!.areEmpty()){
                 if (binding.updateInfoModel!!.areNumbers()){
-                    viewModel.change(context, Navigation.findNavController(binding.root), binding.updateInfoModel!!)
+                    viewModel.change(context, Navigation.findNavController(binding.root),
+                        binding.updateInfoModel!!,binding.progressInfoChange, binding.btnRegistrarseChange)
                 }else{
                     Snackbar.make(binding.root, "Campos numericos no validos", Snackbar.LENGTH_SHORT).show()
                 }
