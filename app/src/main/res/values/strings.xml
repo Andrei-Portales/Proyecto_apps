@@ -55,4 +55,6 @@
     <string name="iniciarWish">Volver a iniciar sesion</string>
     <string name="change_pass">Cambiar Contraseña</string>
     <string name="update_info">Actualizar Informacion</string>
+    <string name="nombreChange">Nombre:</string>
+    <string name="confirm">Confirmar</string>
 </resources>
