@@ -7,8 +7,8 @@
 
     <data>
         <variable
-            name="deleteRoleViewModel"
-            type="com.example.registerzvent.views.delrole.DeleteRoleViewModel" />
+            name="publicarRutinaViewModel"
+            type="com.portales.proyecto_apps.principal.publicar.PublicarRutinaViewModel" />
     </data>
 
 
@@ -18,26 +18,27 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:text="XD"
+            android:layout_width="260dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="56dp"
+            android:text="@string/publish_routine_title"
             android:textAlignment="center"
             android:textColor="@android:color/background_dark"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="325dp"
-            android:layout_height="135dp"
-            android:layout_marginTop="44dp"
-            android:text="XD"
-            android:textAlignment="center"
+            android:layout_width="380dp"
+            android:layout_height="233dp"
+            android:layout_marginTop="180dp"
+            android:text="@string/publish_routine_description"
+            android:textAlignment="gravity"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.483"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
     </androidx.constraintlayout.widget.ConstraintLayout>

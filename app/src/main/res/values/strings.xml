@@ -35,4 +35,6 @@
     <string name="openDrawer">open_drawer</string>
     <string name="closeDrawer">close_drawer</string>
     <string name="signout">Cerrar sesion</string>
+    <string name="publish_routine_title">Publicacion de rutina</string>
+    <string name="publish_routine_description">"¡FitMe es un app basada en su comunidad! \n\n\nDebido a esto todos nuestros ejercicios y rutinas son hechos por los usuarios de nuestro servicio. \n\nTu puedes ayudarnos a hacer crecer la variedad de rutinas para que todos tengamos una mejor experiencia dentro de FitMe."</string>
 </resources>
