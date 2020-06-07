@@ -1,8 +1,9 @@
 package com.portales.proyecto_apps.principal.ajustes.updateinfo
 
-import androidx.lifecycle.LiveData
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavController
 
 class UpdateViewModel : ViewModel() {
 
@@ -14,6 +15,14 @@ class UpdateViewModel : ViewModel() {
             model.value = it
         }
         return model
+    }
+
+    fun change(
+        context: Context?,
+        findNavController: NavController,
+        updateInfoModel: UpdateInfoModel
+    ) {
+        UpdateUseCase.change(context,findNavController,updateInfoModel)
     }
 
 
