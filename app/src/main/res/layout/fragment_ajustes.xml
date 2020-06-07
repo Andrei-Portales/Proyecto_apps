@@ -37,7 +37,7 @@
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/profile_image"
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="0dp"
                         android:src="@drawable/logoapp"
                         app:civ_border_color="#FF000000"
@@ -95,6 +95,30 @@
                         app:layout_constraintGuide_percent="0.75" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/btnChangePass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/colorPrimary"
+                    android:drawableStart="@drawable/ic_baseline_lock_open_24"
+                    android:text="@string/change_pass"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btnInfoUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/colorPrimary"
+                    android:drawableStart="@drawable/ic_baseline_backup_24"
+                    android:text="@string/update_info"
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
         </ScrollView>
 

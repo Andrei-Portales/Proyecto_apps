@@ -53,4 +53,6 @@
     <string name="forgotpassword">¿Olvidaste la contraseña?</string>
     <string name="recuperar">Recuperar</string>
     <string name="iniciarWish">Volver a iniciar sesion</string>
+    <string name="change_pass">Cambiar Contraseña</string>
+    <string name="update_info">Actualizar Informacion</string>
 </resources>
