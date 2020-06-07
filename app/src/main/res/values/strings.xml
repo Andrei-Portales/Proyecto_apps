@@ -49,4 +49,8 @@
     <string name="exercise_2_hint">Ingrese el nombre del SEGUNDO ejercicio</string>
     <string name="exercise_3_hint">Ingrese el nombre del TERCER ejercicio</string>
     <string name="button_publish_routine_text">Publicar Rutina</string>
+    <string name="pass_recovery">Recuperar contraseña</string>
+    <string name="forgotpassword">¿Olvidaste la contraseña?</string>
+    <string name="recuperar">Recuperar</string>
+    <string name="iniciarWish">Volver a iniciar sesion</string>
 </resources>

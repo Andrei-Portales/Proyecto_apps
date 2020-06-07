@@ -43,6 +43,7 @@ class loginFragment : Fragment() {
     private fun botones(){
         binding.txtRegistrarse.setOnClickListener(listener)
         binding.btnIniciarSesion.setOnClickListener(listener)
+        binding.txtForgotPass.setOnClickListener(listener)
     }
 
 
@@ -61,7 +62,9 @@ class loginFragment : Fragment() {
                     }else{
                         Snackbar.make(binding.root, "Campos vacios", Snackbar.LENGTH_SHORT).show()
                     }
-
+                }
+                binding.txtForgotPass -> {
+                    Navigation.findNavController(binding.root).navigate(R.id.action_loginFragment_to_passwordRecoveryFragment)
                 }
             }
         }
