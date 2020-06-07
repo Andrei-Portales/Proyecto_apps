@@ -57,4 +57,6 @@
     <string name="update_info">Actualizar Informacion</string>
     <string name="nombreChange">Nombre:</string>
     <string name="confirm">Confirmar</string>
+    <string name="contrasenanueva">Contraseña nueva</string>
+    <string name="contrasenanuevaconfirmar">Confirmar contraseña nueva</string>
 </resources>
