@@ -5,12 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.android.navigation.AboutFragment">
 
-    <data>
-        <variable
-            name="publicarRutinaViewModel"
-            type="com.portales.proyecto_apps.principal.publicar.PublicarRutinaViewModel" />
-    </data> 
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

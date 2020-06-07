@@ -38,4 +38,15 @@
     <string name="publish_routine_title">Publicacion de rutina</string>
     <string name="publish_routine_description">"¡FitMe es un app basada en su comunidad! \n\n\nDebido a esto todos nuestros ejercicios y rutinas son hechos por los usuarios de nuestro servicio. \n\nTu puedes ayudarnos a hacer crecer la variedad de rutinas para que todos tengamos una mejor experiencia dentro de FitMe."</string>
     <string name="add_rouitine">Agregar nueva rutina</string>
+    <string name="insert_routine_description">Ingrese una descripcion corta del la rutina</string>
+    <string name="title_publish_routine">Publicación de Rutina</string>
+    <string name="title_of_routine">Ingrese el nombre de la nueva rutina</string>
+    <string name="routine_duration_hint">Ingrese la duracion de la rutina</string>
+    <string name="insert_three_excercises">Ingrese los ejercicios de la rutina:</string>
+    <string name="exercise_1_hint">Ingrese el nombre del PRIMER ejercicio</string>
+    <string name="description_excercise_hint">Ingrese la descripcion del ejercicio</string>
+    <string name="insert_youtube_link_hint">Ingrese link de Youtube del ejercicio</string>
+    <string name="exercise_2_hint">Ingrese el nombre del SEGUNDO ejercicio</string>
+    <string name="exercise_3_hint">Ingrese el nombre del TERCER ejercicio</string>
+    <string name="button_publish_routine_text">Publicar Rutina</string>
 </resources>
