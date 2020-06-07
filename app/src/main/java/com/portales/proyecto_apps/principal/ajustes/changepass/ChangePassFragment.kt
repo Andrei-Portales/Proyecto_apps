@@ -28,7 +28,16 @@ class ChangePassFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_change_pass, container, false)
         binding.changeModel = ChangePassModel()
         viewModel =  ViewModelProvider.AndroidViewModelFactory.getInstance(activity?.application as Application).create(ChangePassViewModel::class.java)
+        botones()
         return binding.root
+    }
+
+    fun botones(){
+        binding.btnConfirmChange.setOnClickListener {
+            if (binding.changeModel.isOk()){
+
+            }
+        }
     }
 
 
