@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.databinding.FragmentAddRoutineBinding
 
@@ -67,8 +68,8 @@ class addRoutineFragment : Fragment() {
 
     private fun navigate(){
         if (!verifier()) {
-            val action = R.id.action_addRoutineFragment_to_publicarRutinaFragment
-            Navigation.findNavController(binding.root).navigate(action)
+            val action = addRoutineFragmentDirections.actionAddRoutineFragmentToPublicarRutinaFragment()
+            view?.findNavController()?.navigate(action)
         }
         else{
             Toast.makeText(context,"Porfavor llene los campos vacios", Toast.LENGTH_LONG).show()
