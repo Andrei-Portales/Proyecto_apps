@@ -62,4 +62,15 @@
     <string name="title_rutinas_comunidad">Rutinas de la Comunidad</string>
     <string name="rutinas_comunidad_descripcion">Las rutinas de nuestra app son totalmente hechas por la comunidad de FitMe. \n\nDebido a esto, en este apartado puedes encontrar todas las publicaciones de la comunidad, tambien puedes buscar la que mas te guste para realizarla como rutina diaria.</string>
     <string name="hint_search_routine">Busca aquí tu rutina</string>
+    <string name="Comenzar_rutina">Comenzar Rutina de Hoy</string>
+    <string name="Texto_Motivacional">Hacer algún tipo de ejercicio físico es una necesidad, ya que brinda bastantes beneficios a nuestra salud. Estos son algunos:\n\n
+        1.Nos libran de padecer muchas enfermedades. \n
+        2.La actividad física protege nuestra salud mental \n
+        3.Nos da una gran sensación de bienestar general \n
+        4.Ayudan a dormir mejor \n \n
+
+        Sientete mejor y COMIENZA LA RUTINA DIARIA!
+
+    </string>
+    <string name="Ir_Rutina_C">Comenzar Rutina de la Comunidad</string>
 </resources>
