@@ -35,6 +35,32 @@
         android:id="@+id/ajustesFragment"
         android:name="com.portales.proyecto_apps.principal.ajustes.ajustesFragment"
         android:label="fragment_ajustes"
-        tools:layout="@layout/fragment_ajustes" />
+        tools:layout="@layout/fragment_ajustes" >
+        <action
+            android:id="@+id/action_ajustesFragment_to_changePassFragment"
+            app:destination="@id/changePassFragment" />
+        <action
+            android:id="@+id/action_ajustesFragment_to_updateInfoFragment"
+            app:destination="@id/updateInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePassFragment"
+        android:name="com.portales.proyecto_apps.principal.ajustes.changepass.ChangePassFragment"
+        android:label="fragment_change_pass"
+        tools:layout="@layout/fragment_change_pass" >
+        <action
+            android:id="@+id/action_changePassFragment_to_ajustesFragment"
+            app:destination="@id/ajustesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateInfoFragment"
+        android:name="com.portales.proyecto_apps.principal.ajustes.updateinfo.UpdateInfoFragment"
+        android:label="fragment_update_info"
+        tools:layout="@layout/fragment_update_info" >
+        <action
+            android:id="@+id/action_updateInfoFragment_to_ajustesFragment"
+            app:destination="@id/ajustesFragment" />
+    </fragment>
+
 
 </navigation>

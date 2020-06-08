@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="UpdateInfoModel"
+            type="com.portales.proyecto_apps.principal.ajustes.updateinfo.UpdateInfoModel" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeToRefreshUpdateInfo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".principal.ajustes.updateinfo.UpdateInfoFragment"
+            android:gravity="center|top">
+
+            <EditText
+                android:id="@+id/txtNombreChange"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/text_input"
+                android:ems="10"
+                android:text="@={UpdateInfoModel.name}"
+                android:gravity="start|center_vertical"
+                android:hint="@string/nombre"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <EditText
+                    android:id="@+id/txtFechaNacimientoChange"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/text_input"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/fecha_nacimiento"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:text="@={UpdateInfoModel.birth}"
+                    android:textColor="#000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/txtFechaLayoutChange"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+
+                    app:layout_constraintBottom_toBottomOf="@+id/txtFechaNacimientoChange"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtFechaNacimientoChange" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/txtPesoChange"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:text="@={UpdateInfoModel.weight}"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/text_input"
+                android:ems="10"
+                android:hint="@string/peso"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/txtAlturaChange"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@={UpdateInfoModel.height}"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/text_input"
+                android:ems="10"
+                android:hint="@string/altura"
+                android:inputType="numberDecimal" />
+
+            <Button
+                android:id="@+id/btnRegistrarseChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/boton_rojo"
+                android:textColor="#FFFFFF"
+                android:text="@string/confirm" />
+
+            <ProgressBar
+                android:id="@+id/progressInfoChange"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"/>
+
+        </LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+</layout >
+
