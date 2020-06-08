@@ -20,7 +20,12 @@
         android:id="@+id/publicarRutinaFragment"
         android:name="com.portales.proyecto_apps.principal.publicar.publicarRutinaFragment"
         android:label="fragment_publicar_rutina"
-        tools:layout="@layout/fragment_publicar_rutina" />
+        tools:layout="@layout/fragment_publicar_rutina" >
+        <action
+            android:id="@+id/action_publicarRutinaFragment_to_addRoutineFragment"
+            app:destination="@id/addRoutineFragment"
+            app:popUpTo="@id/publicarRutinaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/rutinasComunidadFragment"
         android:name="com.portales.proyecto_apps.principal.rutinascomunidad.rutinasComunidadFragment"
@@ -60,6 +65,16 @@
         <action
             android:id="@+id/action_updateInfoFragment_to_ajustesFragment"
             app:destination="@id/ajustesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRoutineFragment"
+        android:name="com.portales.proyecto_apps.principal.publicar.addroutine.addRoutineFragment"
+        android:label="addRoutineFragment"
+        tools:layout="@layout/fragment_add_routine">
+        <action
+            android:id="@+id/action_addRoutineFragment_to_publicarRutinaFragment"
+            app:destination="@id/publicarRutinaFragment"
+            app:popUpTo="@id/publicarRutinaFragment" />
     </fragment>
 
 
