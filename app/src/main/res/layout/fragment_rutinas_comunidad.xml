@@ -62,7 +62,8 @@
             android:layout_width="363dp"
             android:layout_height="187dp"
             android:layout_marginTop="16dp"
-            android:text="TextView"
+            android:text="@string/rutinas_comunidad_descripcion"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTituloComunidad" />
