@@ -16,7 +16,7 @@ class AddRoutineRepository {
             Toast.makeText(context,"Se logro agregar a la rutina a FitMe",Toast.LENGTH_LONG).show()
 
         }.addOnFailureListener {
-
+            Toast.makeText(context,"Ha sucedido un error, Intentalo mas tarde",Toast.LENGTH_LONG).show()
         }
 
     }
