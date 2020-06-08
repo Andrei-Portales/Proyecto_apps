@@ -55,20 +55,44 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtpassChange" />
 
+        <ProgressBar
+            android:id="@+id/progressChangepass"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline13"
+            app:layout_constraintEnd_toEndOf="@+id/btnConfirmChange"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline14" />
+
         <Button
             android:id="@+id/btnConfirmChange"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="388dp"
+            android:layout_height="51dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="53dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/boton_rojo"
             android:text="@string/confirm"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtpassChangeConfirm" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.37" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
