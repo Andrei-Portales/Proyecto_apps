@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.navigation.NavController
 import com.google.firebase.auth.FirebaseAuth
 import com.portales.proyecto_apps.R
+import com.portales.proyecto_apps.principal.publicacionmodel.RutinaModel
 
 class ChangePassRepository {
 
