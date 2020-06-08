@@ -21,7 +21,7 @@ data class RutinaModel (var title:String = "", var description:String = "", var 
             ex.put("video", exercise.video)
             exercisesList.add(ex)
         }
-        rutina.put("exercises", exercisesList.toArray())
+        rutina.put("exercises", exercisesList as List<HashMap<String, Any?>>)
         return rutina
     }
 
