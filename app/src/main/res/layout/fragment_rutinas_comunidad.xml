@@ -25,30 +25,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textViewDescripcionRutinasComunidad"
-            android:layout_width="380dp"
-            android:layout_height="170dp"
-            android:layout_marginTop="20dp"
-            android:text="TextView"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTituloComunidad"
-            tools:text="@string/rutinas_comunidad_descripcion" />
-
         <EditText
             android:id="@+id/search_ruotines_text_field"
             android:layout_width="287dp"
             android:layout_height="54dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="@string/hint_search_routine"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.298"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDescripcionRutinasComunidad" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewDecripcionComunidad" />
 
         <ImageButton
             android:id="@+id/search_routines_button"
@@ -68,6 +56,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/search_ruotines_text_field" />
+
+        <TextView
+            android:id="@+id/textViewDecripcionComunidad"
+            android:layout_width="363dp"
+            android:layout_height="187dp"
+            android:layout_marginTop="16dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTituloComunidad" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
