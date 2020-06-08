@@ -2,6 +2,8 @@ package com.portales.proyecto_apps.principal.publicar.addroutine
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import android.content.Context
+import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import com.portales.proyecto_apps.principal.publicacionmodel.RutinaModel
 
@@ -9,22 +11,13 @@ class AddRoutineRepository {
     private val db = FirebaseFirestore.getInstance()
 
 
-    fun putRoutine(): LiveData<List<RutinaModel>> {
-        val MutableData = MutableLiveData<List<RutinaModel>>()
-        db.collection("rutinas").get().addOnCompleteListener {
-            val list = ArrayList<RutinaModel>()
-            if (it.isSuccessful){
-                for (d in it.result!!){
-                    list.add(
-                        RutinaModel(d.get("title").toString(),
-                        d.get("description").toString(),d.get("time").toString().toFloat()
-                        , d.get("user").toString(), d.get("video").toString())
-                    )
+    fun putRoutine(model: RutinaModel, context: Context){
+        db.collection("rutinas").add(model.getMap()).addOnCompleteListener{
+            Toast.makeText(context,"Se logro agregar a la rutina a FitMe",Toast.LENGTH_LONG).show()
 
-                }
-                MutableData.value = list
-            }
+        }.addOnFailureListener {
+
         }
-        return MutableData
+
     }
 }
