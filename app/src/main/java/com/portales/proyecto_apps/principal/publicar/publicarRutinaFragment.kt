@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.databinding.FragmentPublicarRutinaBinding
 
@@ -26,6 +28,13 @@ class publicarRutinaFragment : Fragment() {
 
         //Por si se desea implementar livedata
         binding.lifecycleOwner = this
+
+        binding.buttonGotoAddRoutine.setOnClickListener {
+
+            val action =R.id.action_publicarRutinaFragment_to_addRoutineFragment
+
+           Navigation.findNavController(binding.root).navigate(action)
+        }
 
 
         return binding.root
