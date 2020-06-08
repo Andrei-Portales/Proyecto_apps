@@ -12,6 +12,8 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.databinding.FragmentAddRoutineBinding
+import com.portales.proyecto_apps.principal.publicacionmodel.EjercicioModel
+import com.portales.proyecto_apps.principal.publicacionmodel.RutinaModel
 
 /**
  * A simple [Fragment] subclass.
@@ -64,6 +66,23 @@ class addRoutineFragment : Fragment() {
                         binding.routineDurationField.text.isNullOrEmpty()
 
                 )
+    }
+    private fun agregarRutina(){
+        val ejercicios: ArrayList<EjercicioModel> = arrayListOf<EjercicioModel>(
+            EjercicioModel(title = binding.insertNameExcercise1.text.toString(),description = binding.inserDescriptionExcercise1.text.toString(),video =  binding.insertYoutubeLink1.text.toString()),
+            EjercicioModel(title = binding.insertNameExcercise2.text.toString(),description = binding.inserDescriptionExcercise2.text.toString(),video =  binding.insertYoutubeLink2.text.toString()),
+            EjercicioModel(title = binding.insertNameExcercise3.text.toString(),description = binding.inserDescriptionExcercise3.text.toString(),video =  binding.insertYoutubeLink3.text.toString()))
+
+        context?.let { viewModel.agregarRutina(
+            RutinaModel(
+                title = binding.routineNameField.text.toString(),
+                description = binding.newRoutineDescriptionField.text.toString(),
+                time = binding.routineDurationField.text.toString().toFloat(),
+                exercises = ejercicios
+
+            ), it) }
+
+
     }
 
     private fun navigate(){
