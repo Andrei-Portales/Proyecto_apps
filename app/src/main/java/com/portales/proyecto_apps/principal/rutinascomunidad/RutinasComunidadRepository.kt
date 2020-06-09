@@ -25,4 +25,24 @@ class RutinasComunidadRepository {
             }
         return MutableData
     }
+
+    fun getDataArrayList(): ArrayList<RutinaModel> {
+        var Resultado=ArrayList<RutinaModel>()
+        db.collection("rutinas")
+            .get().addOnCompleteListener {
+                val list = ArrayList<RutinaModel>()
+                if (it.isSuccessful){
+                    for (d in it.result!!){
+                        val rutina = RutinaModel()
+                        rutina.createFromQueryDocumentSnapshot(d)
+
+                        list.add(rutina)
+                    }
+                    Resultado=list
+                }
+            }
+        return Resultado
+    }
+
+
 }

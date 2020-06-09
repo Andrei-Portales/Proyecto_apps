@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -32,18 +33,23 @@ class rutinasComunidadFragment : Fragment() {
 
         //Aqui ira la variable del binding con el xml
         binding.rutinasComunidadViewModel = viewModel
-        binding.lifecycleOwner = this
+       // binding.lifecycleOwner = this
 
         //aqui ira el adapter del recycler
-        val adapter = RutinasComunidadAdapter(RutinaModelListener { id ->
-            //aqui va lo que quiero hacer con el id
+        val adapter = RutinasComunidadAdapter(RutinaModelListener { routineId ->
+            Toast.makeText(context, "${routineId}", Toast.LENGTH_LONG).show()
         })
         binding.recyclerViewComunidad.adapter =adapter
-        viewModel.routinesList.observe(viewLifecycleOwner, Observer {
+
+        viewModel._routinesList.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.submitList(it)
             }
         })
+        binding.setLifecycleOwner(this)
+        binding.searchRoutinesButton.setOnClickListener {
+
+        }
 
         activity?.title = activity?.getString(R.string.rutinas_comunidad)
         return binding.root
