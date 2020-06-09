@@ -7,15 +7,14 @@ import androidx.lifecycle.MutableLiveData
 import com.portales.proyecto_apps.principal.publicacionmodel.RutinaModel
 import kotlinx.coroutines.*
 
-class RutinasComunidadViewModel (application: Application): AndroidViewModel(application){
+class RutinasComunidadViewModel (application: Application, query: String): AndroidViewModel(application){
 
     //private var viewModelJob = Job()
     //private val uiScope = CoroutineScope(Dispatchers.Main +viewModelJob)
     private val repository = RutinasComunidadRepository()
-    private val Resultado = repository.getDataArrayList()
 
-     val _routinesList = repository.getData()
-    val routinesList: LiveData<List<RutinaModel>>
+     val _routinesList = busquedaRutinas(query)
+     val routinesList: LiveData<List<RutinaModel>>
         get()=_routinesList
 
 
@@ -29,8 +28,13 @@ class RutinasComunidadViewModel (application: Application): AndroidViewModel(app
 
     }
 
-    fun busquedaRutinas(resultado: String){
-        _routinesList.value = Resultado.toList()
+    private fun busquedaRutinas(busqueda: String): MutableLiveData<List<RutinaModel>> {
+        if (busqueda ==""){
+            return repository.getData()
+        }
+        else{
+            return repository.getDataQuery(busqueda)
+        }
 
 
 

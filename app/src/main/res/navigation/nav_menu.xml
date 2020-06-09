@@ -30,7 +30,15 @@
         android:id="@+id/rutinasComunidadFragment"
         android:name="com.portales.proyecto_apps.principal.rutinascomunidad.rutinasComunidadFragment"
         android:label="fragment_rutinas_comunidad"
-        tools:layout="@layout/fragment_rutinas_comunidad" />
+        tools:layout="@layout/fragment_rutinas_comunidad" >
+        <action
+            android:id="@+id/action_rutinasComunidadFragment_self"
+            app:destination="@id/rutinasComunidadFragment" />
+        <argument
+            android:name="string_busqueda"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
     <fragment
         android:id="@+id/rutinasFavoritasFragment"
         android:name="com.portales.proyecto_apps.principal.rutinasfavoritas.rutinasFavoritasFragment"
