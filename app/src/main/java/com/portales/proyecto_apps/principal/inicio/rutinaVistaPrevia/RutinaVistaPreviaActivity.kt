@@ -44,17 +44,18 @@ class RutinaVistaPreviaActivity : AppCompatActivity() {
         txtUsuarioRutina.text = data.user
 
         setRecycler()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        return super.onCreateOptionsMenu(menu)
         menuInflater.inflate(R.menu.fav_menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.menu_fav_item -> {
-
+                setFav()
             }
         }
 
@@ -67,22 +68,10 @@ class RutinaVistaPreviaActivity : AppCompatActivity() {
     }
 
     private fun setFav(){
-
+        viewModel.setFav(data.id, this)
     }
 
-    private fun getState(){
-        val modelLiveData : LiveData<Boolean> = viewModel.getData(data.id)
-        modelLiveData.observe(this, object: Observer<Boolean> {
-            override fun onChanged(t: Boolean?) {
-                if (t!!){
 
-                }else{
-
-                }
-            }
-
-        })
-    }
 
 
 
