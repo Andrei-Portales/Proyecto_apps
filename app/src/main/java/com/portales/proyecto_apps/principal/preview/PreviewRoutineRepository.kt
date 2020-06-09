@@ -2,9 +2,9 @@ package com.portales.proyecto_apps.principal.preview
 
 import android.content.ContentValues.TAG
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.portales.proyecto_apps.principal.publicacionmodel.RutinaModel
 
 class PreviewRoutineRepository {
@@ -12,17 +12,39 @@ class PreviewRoutineRepository {
     private val db = FirebaseFirestore.getInstance()
 
     fun obtenerRutina(idDocumento: String): RutinaModel {
-        val rutina = RutinaModel()
-       val request =db.collection("rutinas").document(idDocumento).get()
-        request.addOnCompleteListener {
-            val list = ArrayList<RutinaModel>()
-            if (it.isSuccessful){
-                rutina.createFromQueryDocumentSnapshot(it.result as QueryDocumentSnapshot)
+        var rutinaResultado = RutinaModel()
+        db.collection("rutinas")
+            .get().addOnCompleteListener {
+                val list = ArrayList<RutinaModel>()
+                if (it.isSuccessful){
+                    for (d in it.result!!){
+                        val rutina = RutinaModel()
+                        rutina.createFromQueryDocumentSnapshot(d)
+                        if (rutina.id ==idDocumento){
+                        rutinaResultado = rutina}
+                    }
+
+                }
             }
-        }
+        return rutinaResultado
+    }
 
-        return rutina
 
+    fun getData(parametro: String): LiveData<RutinaModel> {
+        val MutableData = MutableLiveData<RutinaModel>()
+        db.collection("rutinas").whereEqualTo("id",parametro)
+            .get().addOnCompleteListener {
+                var list = RutinaModel()
+                if (it.isSuccessful){
+                    for (d in it.result!!){
+                        val rutina = RutinaModel()
+                        rutina.createFromQueryDocumentSnapshot(d)
+                        list =rutina
+                    }
+                    MutableData.value = list
+                }
+            }
+        return MutableData
     }
 
 }

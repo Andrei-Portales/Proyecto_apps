@@ -99,7 +99,7 @@
         <argument
             android:name="selected_routine_id"
             app:argType="string"
-            android:defaultValue="" />
+            android:defaultValue="0" />
     </fragment>
 
 
