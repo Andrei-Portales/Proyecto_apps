@@ -17,6 +17,8 @@ class InicioRecyclerAdapter(val context:Context,var lista:List<RutinaModel>) :
             val model = lista.get(position)
             view.tituloRecycler.text = model.title
             view.txtUsuarioRecycler.text = model.user
+            val s = "%.2f".format(model.time)
+            view.txttiempoRecycler.text = s + " Minutos"
         }
     }
 
