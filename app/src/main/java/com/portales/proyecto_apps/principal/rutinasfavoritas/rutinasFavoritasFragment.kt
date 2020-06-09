@@ -63,4 +63,5 @@ class rutinasFavoritasFragment : Fragment() {
     }
 
 
+
 }

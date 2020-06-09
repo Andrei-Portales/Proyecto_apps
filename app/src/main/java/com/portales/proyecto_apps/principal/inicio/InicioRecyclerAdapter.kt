@@ -51,7 +51,4 @@ class InicioRecyclerAdapter(val context:Context,var lista:List<RutinaModel>) :
         holder.create(position)
     }
 
-    fun destroy(){
-
-    }
 }
