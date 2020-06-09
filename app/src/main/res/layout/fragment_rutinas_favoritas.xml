@@ -41,12 +41,12 @@
             app:layout_constraintTop_toTopOf="@+id/guideline15">
 
             <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                android:id="@+id/refreshInicio"
+                android:id="@+id/refreshRutinasFav"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerInicio"
+                    android:id="@+id/recyclerRutinasFav"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 

@@ -36,14 +36,14 @@ class rutinasFavoritasFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_rutinas_favoritas, container, false)
         viewModel =  ViewModelProvider.AndroidViewModelFactory.getInstance(activity?.application as Application).create(RutinasFavoritasViewModel::class.java)
         binding.lifecycleOwner = this
-        binding.recyclerInicio.setLayoutManager(LinearLayoutManager(context))
+        binding.recyclerRutinasFav.setLayoutManager(LinearLayoutManager(context))
         getData()
         botones()
         return binding.root
     }
 
     private fun botones(){
-        binding.refreshInicio.setOnRefreshListener {
+        binding.refreshRutinasFav.setOnRefreshListener {
             getData()
         }
     }
@@ -56,8 +56,8 @@ class rutinasFavoritasFragment : Fragment() {
                 if (dataList.size == 0){
                     Toast.makeText(context, "No se encontraron resultados", Toast.LENGTH_LONG).show()
                 }
-                binding.recyclerInicio.adapter = InicioRecyclerAdapter(context as Context, dataList)
-                binding.refreshInicio.isRefreshing = false
+                binding.recyclerRutinasFav.adapter = InicioRecyclerAdapter(context as Context, dataList)
+                binding.refreshRutinasFav.isRefreshing = false
             }
         })
     }
