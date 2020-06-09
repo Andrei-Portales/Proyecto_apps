@@ -53,6 +53,9 @@ class inicioFragment : Fragment() {
         modelLiveData.observe(binding.lifecycleOwner!!, object: Observer<List<RutinaModel>> {
             override fun onChanged(t: List<RutinaModel>?) {
                 dataList = t!!
+                if (dataList.size == 0){
+                    Toast.makeText(context, "No se encontraron resultados", Toast.LENGTH_LONG).show()
+                }
                 binding.recyclerInicio.adapter = InicioRecyclerAdapter(context as Context, dataList)
                 binding.refreshInicio.isRefreshing = false
             }
