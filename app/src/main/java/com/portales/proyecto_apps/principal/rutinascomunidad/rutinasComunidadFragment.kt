@@ -40,7 +40,8 @@ class rutinasComunidadFragment : Fragment() {
 
         //aqui ira el adapter del recycler
         val adapter = RutinasComunidadAdapter(RutinaModelListener { routineId ->
-            Toast.makeText(context, "${routineId}", Toast.LENGTH_LONG).show()
+            previewDeRutina(routineId)
+
         })
         binding.recyclerViewComunidad.adapter =adapter
 
@@ -67,6 +68,15 @@ class rutinasComunidadFragment : Fragment() {
     private fun busquedaRecursiva(){
         val action =rutinasComunidadFragmentDirections.actionRutinasComunidadFragmentSelf()
         action.stringBusqueda = binding.searchRuotinesTextField.text.toString()
+        view?.findNavController()?.navigate(action)
+    }
+
+
+    private fun previewDeRutina(id: String){
+        val action = rutinasComunidadFragmentDirections.actionRutinasComunidadFragmentToPreviewRoutineFragment()
+
+        action.selectedRoutineId = id
+
         view?.findNavController()?.navigate(action)
     }
 }

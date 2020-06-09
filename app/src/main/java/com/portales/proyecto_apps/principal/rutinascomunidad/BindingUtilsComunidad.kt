@@ -45,4 +45,14 @@ fun TextView.setRoutineDescription(item: RutinaModel){
     text = item.description
 }
 
+@BindingAdapter("excercises")
+fun TextView.setExercises(item: RutinaModel){
+    var ejercicios =""
+    for(ejercicio in item.exercises){
+        ejercicios += ejercicio.title +"\n"+ejercicio.description+"\n\n"
+    }
+
+    text = ejercicios
+}
+
 
