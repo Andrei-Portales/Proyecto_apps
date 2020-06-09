@@ -40,6 +40,7 @@ class addRoutineFragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.buttonPublishRoutine.setOnClickListener{
+            agregarRutina()
             navigate()
 
         }
