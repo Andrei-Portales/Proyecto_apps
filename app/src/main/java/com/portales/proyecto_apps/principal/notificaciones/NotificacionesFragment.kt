@@ -1,11 +1,12 @@
 package com.portales.proyecto_apps.principal.notificaciones
-
+/*
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
 import android.os.Build
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.provider.ContactsContract
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -101,7 +102,7 @@ class NotificacionesFragment : Fragment() {
             var alertime = calendar.timeInMillis - System.currentTimeMillis()
             var random: Int = (Math.random() *50 + 1) as Int
 
-            var data: Data = guardarData("Rutina Diaria", "Mantente en forma realizando la rutina diaria", random)
+            var data: ContactsContract.Contacts.Data = guardarData("Rutina Diaria", "Mantente en forma realizando la rutina diaria", random)
             WorkManagerN.guardarNotificacion(alertime, data, tag)
 
 
@@ -144,4 +145,4 @@ class NotificacionesFragment : Fragment() {
     }
 
 
-}
+}*/

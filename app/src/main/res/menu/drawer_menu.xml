@@ -27,10 +27,7 @@
             android:title="@string/RutinasFavs"
             android:icon="@drawable/ic_star_black_24dp"/>
 
-        <item
-            android:id="@+id/NotificacionesFragment"
-            android:icon="@drawable/ic_baseline_notifications_active_24"
-            android:title="@string/Notificacion_Title" />
+
         <item
             android:id="@+id/nav_ajustes"
             android:title="@string/Ajustes"
