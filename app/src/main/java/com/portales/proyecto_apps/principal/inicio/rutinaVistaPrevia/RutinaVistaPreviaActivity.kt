@@ -29,6 +29,7 @@ import kotlinx.android.synthetic.main.ejercicio_model.view.*
 class RutinaVistaPreviaActivity : AppCompatActivity() {
     private var data :RutinaModel = RutinaModel()
     private lateinit var viewModel: VistaPreviaViewModel
+    private var adapter : EjerciciosRecyclerAdapter? = EjerciciosRecyclerAdapter(this, data.exercises)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +46,11 @@ class RutinaVistaPreviaActivity : AppCompatActivity() {
 
         setRecycler()
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        adapter = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -64,7 +70,7 @@ class RutinaVistaPreviaActivity : AppCompatActivity() {
 
     private fun setRecycler(){
         testRecycler.setLayoutManager(LinearLayoutManager(this))
-        testRecycler.adapter = EjerciciosRecyclerAdapter(this, data.exercises)
+        testRecycler.adapter = adapter
     }
 
     private fun setFav(){
