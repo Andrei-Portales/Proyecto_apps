@@ -1,5 +1,7 @@
 package com.portales.proyecto_apps.principal.publicacionmodel
 
+import com.google.firebase.firestore.QueryDocumentSnapshot
+
 data class RutinaModel (var title:String = "", var description:String = "", var time:Float = 0f
                    , var user:String = "", var video:String = "",
                         var exercises:ArrayList<EjercicioModel> = ArrayList()) {
@@ -31,5 +33,19 @@ data class RutinaModel (var title:String = "", var description:String = "", var 
 
     fun addExercise(model: EjercicioModel){
         exercises.add(model)
+    }
+
+    fun createFromQueryDocumentSnapshot(d:QueryDocumentSnapshot){
+        title = d.get("title").toString()
+        description =  d.get("description").toString()
+        time = d.get("time").toString().toFloat()
+        user = d.get("user").toString()
+        video =  d.get("video").toString()
+        val listMaps:List<HashMap<String, Any?>> = d.get("exercises") as List<HashMap<String, Any?>>
+        for(map in listMaps){
+            exercises.add(EjercicioModel(map.get("title").toString(),
+                map.get("description").toString(), map.get("video").toString()))
+        }
+
     }
 }
