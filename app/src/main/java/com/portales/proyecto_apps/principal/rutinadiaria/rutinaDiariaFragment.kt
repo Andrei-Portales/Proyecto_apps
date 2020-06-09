@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.databinding.FragmentRutinaDiariaBinding
+import com.portales.proyecto_apps.principal.rutinascomunidad.rutinasComunidadFragmentDirections
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -44,7 +45,29 @@ class rutinaDiariaFragment : Fragment() {
 
         binding.dateText.text = date.toString()
 
-        binding.IrRutinaComunidad
+        binding.IrRutinaComunidad.setOnClickListener{
+            requireView().findNavController().navigate(rutinaDiariaFragmentDirections.actionRutinaDiariaFragmentToRutinasComunidadFragment())
+        }
+
+        binding.IrRutinaDiaria.setOnClickListener{
+
+            if(day == Calendar.MONDAY){
+                previewDeRutina("5hmLkTqKcGKfY2WFqIKF")
+            }else if (day == Calendar.TUESDAY){
+                previewDeRutina("M9jrC4b3jX10K6jYot4p")
+            }else if (day == Calendar.WEDNESDAY){
+                previewDeRutina("W8SiEGMclw7RzgDUU1Jh")
+            }else if (day == Calendar.THURSDAY){
+                previewDeRutina("hHwXBi6yrQl6XBUlndwX")
+            }else if (day == Calendar.FRIDAY){
+                previewDeRutina("jtg3mIEfbNUULIrCbRzP")
+            }else if (day == Calendar.SATURDAY){
+                previewDeRutina("pugRFu9UbyUykaG4xR5G")
+            }else{
+                previewDeRutina("ybNnOrC4XIo4nLYmXhsj")
+            }
+
+        }
 
         return binding.root
     }
@@ -56,6 +79,14 @@ class rutinaDiariaFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(RutinaDiariaViewModel::class.java)
 
 
+    }
+
+    private fun previewDeRutina(id: String){
+        val action = rutinasComunidadFragmentDirections.actionRutinasComunidadFragmentToPreviewRoutineFragment()
+
+        action.selectedRoutineId = id
+
+        view?.findNavController()?.navigate(action)
     }
 
 }
