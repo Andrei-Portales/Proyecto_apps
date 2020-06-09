@@ -1,16 +1,14 @@
 package com.portales.proyecto_apps.principal
 
+
 import android.content.Intent
-import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,6 +17,10 @@ import kotlinx.android.synthetic.main.drawer_header.view.*
 class MainActivity : AppCompatActivity() {
 
     private val user = FirebaseAuth.getInstance()
+
+    private val idUnico = 715678
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         action.syncState()
 
         updateUI(R.drawable.logoapp)
+
 
     }
 
@@ -87,5 +90,6 @@ class MainActivity : AppCompatActivity() {
          navheader.txtUserEmail.text = user.currentUser?.email
          Glide.with(this).load(image).into(navheader.imgUser)
     }
+
 
 }

@@ -76,7 +76,13 @@
     <string name="Finalizar_rutina">Finalizar Rutina</string>
     <string name="titulo">Titulo:</string>
     <string name="usuario">Usuario:</string>
+    <string name="Fecha_E">Fecha</string>
+    <string name="Hora_E">Hora</string>
+    <string name="Notificacion_E">Establecer Notificacion</string>
+    <string name="Eliminar_N_E">Eliminar Notificacion</string>
+    <string name="Notificacion_Title">Notificaciones</string>
     <string name="excercises_title_preview">Ejercicios</string>
     <string name="button_do_routine">Realizar la rutina</string>
+
 
 </resources>
