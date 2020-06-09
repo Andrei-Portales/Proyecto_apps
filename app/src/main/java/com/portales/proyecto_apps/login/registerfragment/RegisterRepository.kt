@@ -49,6 +49,7 @@ class RegisterRepository {
         user.put("birth", model.birth)
         user.put("weight", model.weight.toFloat())
         user.put("height", model.height.toFloat())
+        user.put("favorites", ArrayList<String>() as List<String>)
         user.put("image", null)
         db.collection("users").document(model.email.toString()).set(user).addOnCompleteListener {
             navController.navigate(R.id.action_registerFragment_to_loginFragment)

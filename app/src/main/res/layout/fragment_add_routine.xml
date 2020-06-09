@@ -10,21 +10,25 @@
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="65dp"
         tools:layout_editor_absoluteY="-68dp">
+
         <ScrollView
-            android:layout_width="416dp"
-            android:layout_height="646dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_publish_routine"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.447"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.007">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
+                android:id="@+id/LayoutInfoRutina"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center|top"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView4"
@@ -41,45 +45,130 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <EditText
-                    android:id="@+id/new_routine_description_field"
-                    android:layout_width="327dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="16dp"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:hint="@string/insert_routine_description"
-                    android:inputType="textMultiLine"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.496"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/routine_name_field" />
 
-                <EditText
-                    android:id="@+id/routine_duration_field"
-                    android:layout_width="326dp"
-                    android:layout_height="43dp"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:hint="@string/routine_duration_hint"
-                    android:inputType="number"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.494"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/new_routine_description_field" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/text_input"
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/routine_name_field"
-                    android:layout_width="317dp"
-                    android:layout_height="55dp"
-                    android:layout_marginTop="40dp"
-                    android:ems="10"
-                    android:hint="@string/title_of_routine"
-                    android:inputType="textPersonName"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.497"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:gravity="center"
+                            android:text="Titulo:"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/routine_name_field"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="0"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:inputType="textMultiLine"
+                            android:textAlignment="center" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="0"
+                            android:gravity="center"
+                            android:text="Descripcion:"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/new_routine_description_field"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="0"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:inputType="textMultiLine"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="0"
+                            android:gravity="center"
+                            android:text="Tiempo:"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/routine_duration_field"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:inputType="textMultiLine"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/textView5"
@@ -96,143 +185,44 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/routine_duration_field" />
 
-                <EditText
-                    android:id="@+id/insert_name_excercise_1"
-                    android:layout_width="323dp"
-                    android:layout_height="43dp"
-                    android:layout_marginTop="50dp"
-                    android:ems="10"
-                    android:hint="@string/exercise_1_hint"
-                    android:inputType="textPersonName"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.504"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/RecyclerEjerciciosAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
 
-                <EditText
-                    android:id="@+id/inser_description_excercise_1"
-                    android:layout_width="323dp"
-                    android:layout_height="70dp"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:hint="@string/description_excercise_hint"
-                    android:inputType="textMultiLine"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.505"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/insert_name_excercise_1" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
 
-                <EditText
-                    android:id="@+id/insert_youtube_link_1"
-                    android:layout_width="322dp"
-                    android:layout_height="39dp"
-                    android:layout_marginTop="4dp"
-                    android:ems="10"
-                    android:hint="@string/insert_youtube_link_hint"
-                    android:inputType="textPersonName"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.504"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/inser_description_excercise_1" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/insert_name_excercise_2"
-                    android:layout_width="323dp"
-                    android:layout_height="43dp"
-                    android:layout_marginTop="50dp"
-                    android:ems="10"
-                    android:hint="@string/exercise_2_hint"
-                    android:inputType="textPersonName"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.504"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/insert_youtube_link_1" />
+                    <Button
+                        android:id="@+id/button_publish_routine"
+                        android:layout_width="185dp"
+                        android:layout_height="47dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:text="@string/button_publish_routine_text"
+                        android:textColor="@android:color/background_light" />
 
-                <EditText
-                    android:id="@+id/inser_description_excercise_2"
-                    android:layout_width="323dp"
-                    android:layout_height="70dp"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:hint="@string/description_excercise_hint"
-                    android:inputType="textMultiLine"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.505"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/insert_name_excercise_2" />
+                    <Button
+                        android:id="@+id/btnAgregarEjercicio"
+                        android:layout_width="185dp"
+                        android:layout_height="47dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:text="Agregar Ejercicio"
+                        android:textColor="@android:color/background_light" />
+                </LinearLayout>
 
-                <EditText
-                    android:id="@+id/insert_youtube_link_2"
-                    android:layout_width="322dp"
-                    android:layout_height="39dp"
-                    android:layout_marginTop="4dp"
-                    android:ems="10"
-                    android:hint="@string/insert_youtube_link_hint"
-                    android:inputType="textPersonName"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.504"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/inser_description_excercise_2" />
 
-                <EditText
-                    android:id="@+id/insert_name_excercise_3"
-                    android:layout_width="323dp"
-                    android:layout_height="43dp"
-                    android:layout_marginTop="50dp"
-                    android:ems="10"
-                    android:hint="@string/exercise_3_hint"
-                    android:inputType="textPersonName"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.504"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/insert_youtube_link_2" />
-
-                <EditText
-                    android:id="@+id/inser_description_excercise_3"
-                    android:layout_width="323dp"
-                    android:layout_height="70dp"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:hint="@string/description_excercise_hint"
-                    android:inputType="textMultiLine"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.505"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/insert_name_excercise_3" />
-
-                <EditText
-                    android:id="@+id/insert_youtube_link_3"
-                    android:layout_width="322dp"
-                    android:layout_height="39dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="8dp"
-                    android:ems="10"
-                    android:hint="@string/insert_youtube_link_hint"
-                    android:inputType="textPersonName"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.504"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/inser_description_excercise_3" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
         </ScrollView>
 
-
-        <Button
-            android:id="@+id/button_publish_routine"
-            android:layout_width="219dp"
-            android:layout_height="46dp"
-            android:layout_marginBottom="24dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="@string/button_publish_routine_text"
-            android:textColor="@android:color/background_light"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

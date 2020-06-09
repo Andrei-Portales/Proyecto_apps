@@ -26,6 +26,7 @@ class rutinaDiariaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        activity?.title = activity?.getString(R.string.RutinaDiaria)
         binding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_rutina_diaria,

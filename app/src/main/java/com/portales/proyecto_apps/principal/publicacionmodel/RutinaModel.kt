@@ -8,6 +8,26 @@ data class RutinaModel (var title:String = "", var description:String = "", var 
                         var exercises:ArrayList<EjercicioModel> = ArrayList(), var id: String="" )
                                                                                     :IElemento{
 
+    fun isOk() : Boolean{
+        return(title.isNotEmpty() && title.isNotBlank() &&
+                description.isNotEmpty() && description.isNotBlank() &&
+                (time > 0) && exercisesOk() &&
+                (exercises.size>0) )
+    }
+
+    fun exercisesOk():Boolean{
+        var ok = true
+        for (ex in exercises){
+            var k = ex.title.isNotEmpty() && ex.title.isNotBlank() &&
+                    ex.description.isNotEmpty() && ex.description.isNotBlank() &&
+                    ex.video.isNotEmpty() && ex.video.isNotBlank()
+            if (!k){
+                ok = false
+            }
+        }
+        return ok
+    }
+
     fun getMap():HashMap<String, Any?>{
         val rutina = HashMap<String, Any?>()
         rutina.put("title", title)

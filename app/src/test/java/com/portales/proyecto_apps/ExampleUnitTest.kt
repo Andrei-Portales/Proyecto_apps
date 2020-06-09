@@ -3,6 +3,7 @@ package com.portales.proyecto_apps
 import org.junit.Test
 
 import org.junit.Assert.*
+import kotlin.random.Random
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -12,6 +13,14 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        for (n in 0..5){
+            print(rand(0, 999999999).toString() + "\n")
+        }
+
+    }
+
+    fun rand(start: Int, end: Int): Int {
+        require(start <= end) { "Illegal Argument" }
+        return Random(System.nanoTime()).nextInt(start, end + 1)
     }
 }
