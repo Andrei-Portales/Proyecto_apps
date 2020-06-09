@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.databinding.FragmentRutinaDiariaBinding
 import java.text.SimpleDateFormat
@@ -40,6 +41,14 @@ class rutinaDiariaFragment : Fragment() {
 
 
         binding.dateText.text = date.toString()
+
+        /*binding.IrRutinaComunidad.setOnClickListener{
+            requireView().findNavController().navigate(rutinaDiariaFragmentDirections.actionRutinaDiariaFragmentToPreviewRoutineFragment())
+        }
+
+        binding.IrRutinaDiaria.setOnClickListener{
+            requireView().findNavController().navigate(rutinaDiariaFragmentDirections.actionRutinaDiariaFragmentToStartRutinaFragment())
+        }*/
 
         return binding.root
     }

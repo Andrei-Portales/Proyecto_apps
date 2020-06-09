@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.databinding.FragmentRutinaDiariaBinding
 import com.portales.proyecto_apps.databinding.StartRutinaFragmentBinding
@@ -22,6 +25,8 @@ class StartRutinaFragment : Fragment() {
     private lateinit var viewModel: StartRutinaViewModel
     private lateinit var binding: StartRutinaFragmentBinding
     private lateinit var data: List<RutinaModel>
+
+
     private var currentDay: Calendar = Calendar.getInstance()
     private var day: Int = currentDay.get(Calendar.DAY_OF_WEEK)
 
@@ -37,11 +42,22 @@ class StartRutinaFragment : Fragment() {
             false
         )
 
+        val modelLiveData : LiveData<List<RutinaModel>> = viewModel.getModel()
+
         if(day == Calendar.MONDAY){
+
+            binding.Titulo1.text = modelLiveData.value?.get(0)?.title.toString()
+            binding.Descripcion1.text = modelLiveData.value?.get(0)?.title.toString()
 
         }else if (day == Calendar.TUESDAY){
 
+            binding.Titulo1.text = modelLiveData.value?.get(0)?.title.toString()
+            binding.Descripcion1.text = modelLiveData.value?.get(0)?.title.toString()
+
         }else if (day == Calendar.WEDNESDAY){
+
+            binding.Titulo1.text = modelLiveData.value?.get(0)?.title.toString()
+            binding.Descripcion1.text = modelLiveData.value?.get(0)?.title.toString()
 
         }else if (day == Calendar.THURSDAY){
 
@@ -53,6 +69,10 @@ class StartRutinaFragment : Fragment() {
 
         }
 
+        /*binding.button.setOnClickListener{
+            requireView().findNavController().navigate(StartRutinaFragmentDirections.actionStartRutinaFragmentToRutinaDiariaFragment())
+        }*/
+
 
         return binding.root
 
@@ -60,8 +80,8 @@ class StartRutinaFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(StartRutinaViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel = ViewModelProvider(this).get(StartRutinaViewModel::class.java)
+
     }
 
 }

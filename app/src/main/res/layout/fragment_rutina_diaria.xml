@@ -54,11 +54,10 @@
             android:foregroundTint="#FFFFFF"
             android:text="@string/Comenzar_rutina"
             android:textColor="@color/cardview_light_background"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/Ir_Rutina_Comunidad"
             app:layout_constraintEnd_toStartOf="@+id/Ir_Rutina_Comunidad"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Info_text"
-            app:layout_constraintVertical_bias="0.846" />
+            app:layout_constraintHorizontal_bias="0.566"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/date_text"
@@ -86,7 +85,7 @@
             android:id="@+id/Ir_Rutina_Comunidad"
             android:layout_width="146dp"
             android:layout_height="57dp"
-            android:layout_marginBottom="52dp"
+            android:layout_marginBottom="32dp"
             android:background="@drawable/boton_rojo"
             android:text="@string/Ir_Rutina_C"
             android:textColor="@color/cardview_light_background"
