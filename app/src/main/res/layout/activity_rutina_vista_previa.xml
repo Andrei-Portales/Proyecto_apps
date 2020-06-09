@@ -17,6 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center|top"
             android:orientation="vertical">
 
             <LinearLayout
@@ -178,8 +179,19 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/testRecycler"
                 android:layout_width="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+
+            <Button
+                android:id="@+id/btnRegresarActivity"
+                android:layout_width="185dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="Terminar rutina"
+                android:textColor="@android:color/background_light" />
+
         </LinearLayout>
     </ScrollView>
 

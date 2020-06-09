@@ -43,8 +43,11 @@ class RutinaVistaPreviaActivity : AppCompatActivity() {
         txtDescripcionRutina.text = data.description
         txtTiempoRutina.text = s
         txtUsuarioRutina.text = data.user
-
         setRecycler()
+
+        btnRegresarActivity.setOnClickListener {
+            finish()
+        }
 
     }
 
