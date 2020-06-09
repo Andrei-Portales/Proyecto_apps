@@ -50,7 +50,14 @@ class RutinaVistaPreviaActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        adapter = null
+        finish()
+    }
+
+
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
