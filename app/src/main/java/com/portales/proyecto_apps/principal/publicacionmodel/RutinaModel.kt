@@ -5,7 +5,8 @@ import com.google.firebase.firestore.QueryDocumentSnapshot
 
 data class RutinaModel (var title:String = "", var description:String = "", var time:Float = 0f
                    , var user:String = "", var video:String = "",
-                        var exercises:ArrayList<EjercicioModel> = ArrayList(), var id: String="" ){
+                        var exercises:ArrayList<EjercicioModel> = ArrayList(), var id: String="" )
+                                                                                    :IElemento{
 
     fun getMap():HashMap<String, Any?>{
         val rutina = HashMap<String, Any?>()
