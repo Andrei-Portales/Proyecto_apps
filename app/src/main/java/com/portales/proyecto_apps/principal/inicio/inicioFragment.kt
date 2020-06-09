@@ -26,7 +26,7 @@ class inicioFragment : Fragment() {
     private lateinit var binding : FragmentInicioBinding
     private lateinit var viewModel: InicioViewModel
     private lateinit var dataList :List<RutinaModel>
-    private lateinit var adapter : InicioRecyclerAdapter
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,5 +61,6 @@ class inicioFragment : Fragment() {
             }
         })
     }
+
 
 }

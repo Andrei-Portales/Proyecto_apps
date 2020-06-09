@@ -15,7 +15,11 @@
         android:id="@+id/rutinaDiariaFragment"
         android:name="com.portales.proyecto_apps.principal.rutinadiaria.rutinaDiariaFragment"
         android:label="fragment_rutina_diaria"
-        tools:layout="@layout/fragment_rutina_diaria" />
+        tools:layout="@layout/fragment_rutina_diaria" >
+        <action
+            android:id="@+id/action_rutinaDiariaFragment_to_previewRoutineFragment"
+            app:destination="@id/previewRoutineFragment" />
+    </fragment>
     <fragment
         android:id="@+id/publicarRutinaFragment"
         android:name="com.portales.proyecto_apps.principal.publicar.publicarRutinaFragment"
@@ -30,7 +34,18 @@
         android:id="@+id/rutinasComunidadFragment"
         android:name="com.portales.proyecto_apps.principal.rutinascomunidad.rutinasComunidadFragment"
         android:label="fragment_rutinas_comunidad"
-        tools:layout="@layout/fragment_rutinas_comunidad" />
+        tools:layout="@layout/fragment_rutinas_comunidad" >
+        <action
+            android:id="@+id/action_rutinasComunidadFragment_self"
+            app:destination="@id/rutinasComunidadFragment" />
+        <argument
+            android:name="string_busqueda"
+            app:argType="string"
+            android:defaultValue="" />
+        <action
+            android:id="@+id/action_rutinasComunidadFragment_to_previewRoutineFragment"
+            app:destination="@id/previewRoutineFragment" />
+    </fragment>
     <fragment
         android:id="@+id/rutinasFavoritasFragment"
         android:name="com.portales.proyecto_apps.principal.rutinasfavoritas.rutinasFavoritasFragment"
@@ -75,6 +90,16 @@
             android:id="@+id/action_addRoutineFragment_to_publicarRutinaFragment"
             app:destination="@id/publicarRutinaFragment"
             app:popUpTo="@id/publicarRutinaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/previewRoutineFragment"
+        android:name="com.portales.proyecto_apps.principal.preview.previewRoutineFragment"
+        android:label="previewRoutineFragment"
+        tools:layout="@layout/fragment_preview_routine">
+        <argument
+            android:name="selected_routine_id"
+            app:argType="string"
+            android:defaultValue="" />
     </fragment>
 
 

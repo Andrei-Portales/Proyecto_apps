@@ -17,7 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> clickListener.onClick(rutinaModel)">
+        android:onClick="@{() -> clickListener.onClick(rutinaModel)}">
 
         <ImageView
             android:id="@+id/profile_view_image"

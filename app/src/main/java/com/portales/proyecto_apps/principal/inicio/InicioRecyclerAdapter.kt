@@ -50,4 +50,5 @@ class InicioRecyclerAdapter(val context:Context,var lista:List<RutinaModel>) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.create(position)
     }
+
 }
