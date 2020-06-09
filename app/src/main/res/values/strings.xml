@@ -83,6 +83,7 @@
     <string name="Notificacion_Title">Notificaciones</string>
     <string name="excercises_title_preview">Ejercicios</string>
     <string name="button_do_routine">Realizar la rutina</string>
+    <string name="welcome_again">¡Bienvenido de nuevo!</string>
 
 
 </resources>
