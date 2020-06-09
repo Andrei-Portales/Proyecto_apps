@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.databinding.FragmentRutinaDiariaBinding
+import java.text.SimpleDateFormat
 import java.util.*
 
 class rutinaDiariaFragment : Fragment() {
@@ -34,7 +35,11 @@ class rutinaDiariaFragment : Fragment() {
             false
         )
 
-        binding.dateText.text = currentTime.toString()
+        val format = SimpleDateFormat("dd/MM/yyyy")
+        val date = format.format(currentTime.getTime())
+
+
+        binding.dateText.text = date.toString()
 
         return binding.root
     }

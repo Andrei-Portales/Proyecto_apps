@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.databinding.FragmentRutinaDiariaBinding
 import com.portales.proyecto_apps.databinding.StartRutinaFragmentBinding
+import com.portales.proyecto_apps.principal.publicacionmodel.RutinaModel
 import java.util.*
 
 class StartRutinaFragment : Fragment() {
@@ -20,8 +21,10 @@ class StartRutinaFragment : Fragment() {
 
     private lateinit var viewModel: StartRutinaViewModel
     private lateinit var binding: StartRutinaFragmentBinding
+    private lateinit var data: List<RutinaModel>
     private var currentDay: Calendar = Calendar.getInstance()
     private var day: Int = currentDay.get(Calendar.DAY_OF_WEEK)
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
