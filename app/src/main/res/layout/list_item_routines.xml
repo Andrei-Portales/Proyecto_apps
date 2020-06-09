@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="rutinaModel"
+            type="com.portales.proyecto_apps.principal.publicacionmodel.RutinaModel" />
+        <variable
+            name="clickListener"
+            type="com.portales.proyecto_apps.principal.rutinascomunidad.RutinaModelListener" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/profile_view_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/community_icon"/>
+
+        <TextView
+            android:id="@+id/routine_name_title"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profile_view_image"
+            app:layout_constraintTop_toTopOf="@+id/profile_view_image"
+            tools:text="Wednesday" />
+
+        <TextView
+            android:id="@+id/routine_user_string"
+            android:layout_width="195dp"
+            android:layout_height="13dp"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/routine_name_title"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/routine_name_title"
+            app:layout_constraintTop_toBottomOf="@+id/routine_name_title"
+            tools:text="Excellent!!!" />
+
+        <TextView
+            android:id="@+id/routine_description_string"
+            android:layout_width="311dp"
+            android:layout_height="23dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/routine_name_title"
+            app:layout_constraintStart_toStartOf="@+id/routine_name_title"
+            app:layout_constraintTop_toBottomOf="@+id/routine_user_string" />
+
+        <TextView
+            android:id="@+id/duracion_rutina_string"
+            android:layout_width="116dp"
+            android:layout_height="13dp"
+            android:text="TextView"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/routine_name_title"
+            app:layout_constraintStart_toEndOf="@+id/routine_user_string"
+            app:layout_constraintTop_toBottomOf="@+id/routine_name_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
