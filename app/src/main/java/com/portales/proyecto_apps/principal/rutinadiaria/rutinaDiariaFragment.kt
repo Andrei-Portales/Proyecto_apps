@@ -22,7 +22,9 @@ class rutinaDiariaFragment : Fragment() {
     private lateinit var viewModel: RutinaDiariaViewModel
     private lateinit var binding: FragmentRutinaDiariaBinding
 
-    var currentTime: Date = Calendar.getInstance().time
+    private var currentTime: Date = Calendar.getInstance().time
+    private var currentDay: Calendar = Calendar.getInstance()
+    private var day: Int = currentDay.get(Calendar.DAY_OF_WEEK)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,13 +44,7 @@ class rutinaDiariaFragment : Fragment() {
 
         binding.dateText.text = date.toString()
 
-        /*binding.IrRutinaComunidad.setOnClickListener{
-            requireView().findNavController().navigate(rutinaDiariaFragmentDirections.actionRutinaDiariaFragmentToPreviewRoutineFragment())
-        }
-
-        binding.IrRutinaDiaria.setOnClickListener{
-            requireView().findNavController().navigate(rutinaDiariaFragmentDirections.actionRutinaDiariaFragmentToStartRutinaFragment())
-        }*/
+        binding.IrRutinaComunidad
 
         return binding.root
     }
