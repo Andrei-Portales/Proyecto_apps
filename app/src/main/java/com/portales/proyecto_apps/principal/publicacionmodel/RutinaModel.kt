@@ -1,10 +1,11 @@
 package com.portales.proyecto_apps.principal.publicacionmodel
 
+import com.google.firebase.firestore.DocumentId
 import com.google.firebase.firestore.QueryDocumentSnapshot
 
 data class RutinaModel (var title:String = "", var description:String = "", var time:Float = 0f
                    , var user:String = "", var video:String = "",
-                        var exercises:ArrayList<EjercicioModel> = ArrayList()) {
+                        var exercises:ArrayList<EjercicioModel> = ArrayList(), var id: String="" ){
 
     fun getMap():HashMap<String, Any?>{
         val rutina = HashMap<String, Any?>()
@@ -13,6 +14,7 @@ data class RutinaModel (var title:String = "", var description:String = "", var 
         rutina.put("description", description)
         rutina.put("user", user)
         rutina.put("video", video)
+        rutina.put("id", id)
 
         val exercisesList = ArrayList<HashMap<String, Any?>>()
 
@@ -41,6 +43,7 @@ data class RutinaModel (var title:String = "", var description:String = "", var 
         time = d.get("time").toString().toFloat()
         user = d.get("user").toString()
         video =  d.get("video").toString()
+        id = d.get("id").toString()
         val listMaps:List<HashMap<String, Any?>> = d.get("exercises") as List<HashMap<String, Any?>>
         for(map in listMaps){
             exercises.add(EjercicioModel(map.get("title").toString(),
@@ -54,6 +57,7 @@ data class RutinaModel (var title:String = "", var description:String = "", var 
         description = map.get("description").toString()
         user = map.get("user").toString()
         video = map.get("video").toString()
+        id = map.get("id").toString()
 
         val listaRutinas = map.get("exercises") as List<HashMap<String, Any?>>
         for (rutina in listaRutinas){

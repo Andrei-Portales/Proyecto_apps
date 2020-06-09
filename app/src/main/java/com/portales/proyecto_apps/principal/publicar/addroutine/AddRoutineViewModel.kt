@@ -14,7 +14,7 @@ class AddRoutineViewModel(): ViewModel() {
 
     fun agregarRutina(model: RutinaModel, context: Context){
         model.user = repository.getUserEmail()
-        repository.putRoutine(model,context)
+        repository.putRoutine1(model,context)
 
     }
 }
