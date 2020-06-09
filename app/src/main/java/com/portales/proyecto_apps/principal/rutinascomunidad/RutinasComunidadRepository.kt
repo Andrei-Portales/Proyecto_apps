@@ -9,7 +9,7 @@ import com.portales.proyecto_apps.principal.publicacionmodel.RutinaModel
 class RutinasComunidadRepository {
     private val db = FirebaseFirestore.getInstance()
 
-    fun getData(): LiveData<List<RutinaModel>> {
+    fun getData(): MutableLiveData<List<RutinaModel>> {
         val MutableData = MutableLiveData<List<RutinaModel>>()
         db.collection("rutinas")
             .get().addOnCompleteListener {

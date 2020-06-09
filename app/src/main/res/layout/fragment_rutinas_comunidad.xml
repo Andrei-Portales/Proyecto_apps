@@ -4,7 +4,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.android.navigation.TitleFragment">
+    tools:context="com.example.android.navigation.RutinasComunidadFragment">
+
+    <data>
+        <variable
+            name="rutinasComunidadViewModel"
+            type="com.portales.proyecto_apps.principal.rutinascomunidad.RutinasComunidadViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/titleConstraint"
@@ -50,8 +56,10 @@
             app:layout_constraintTop_toTopOf="@+id/search_ruotines_text_field" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_comunidad"
             android:layout_width="409dp"
             android:layout_height="369dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
