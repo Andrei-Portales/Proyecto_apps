@@ -1,5 +1,6 @@
 package com.portales.proyecto_apps.principal.inicio
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -23,6 +24,7 @@ class InicioRecyclerAdapter(val context:Context,var lista:List<RutinaModel>) :
             view.txtUsuarioRecycler.text = model.user
             val s = "%.2f".format(model.time)
             view.txttiempoRecycler.text = s + " Minutos"
+            accion()
         }
 
         fun accion(){
@@ -30,6 +32,7 @@ class InicioRecyclerAdapter(val context:Context,var lista:List<RutinaModel>) :
                 val intent = Intent(context, RutinaVistaPreviaActivity::class.java)
                 val element = lista.get(pos).getMap()
                 intent.putExtra("data", element)
+                (context as Activity).startActivity(intent)
             }
         }
     }

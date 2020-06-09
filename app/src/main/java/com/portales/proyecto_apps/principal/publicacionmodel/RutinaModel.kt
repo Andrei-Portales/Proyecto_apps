@@ -46,6 +46,19 @@ data class RutinaModel (var title:String = "", var description:String = "", var 
             exercises.add(EjercicioModel(map.get("title").toString(),
                 map.get("description").toString(), map.get("video").toString()))
         }
+    }
 
+    fun createFromMap(map:HashMap<String, Any?>){
+        title = map.get("title").toString()
+        time = map.get("time").toString().toFloat()
+        description = map.get("description").toString()
+        user = map.get("user").toString()
+        video = map.get("video").toString()
+
+        val listaRutinas = map.get("exercises") as List<HashMap<String, Any?>>
+        for (rutina in listaRutinas){
+            exercises.add(EjercicioModel(rutina.get("title").toString(),
+            rutina.get("description").toString(), rutina.get("video").toString()))
+        }
     }
 }

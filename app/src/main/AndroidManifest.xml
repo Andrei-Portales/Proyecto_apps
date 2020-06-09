@@ -11,7 +11,7 @@
         android:roundIcon="@drawable/logoapp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".principal.inicio.rutinaVistaPrevia.RutinaVistaPreviaActivity"></activity>
+        <activity android:name=".principal.inicio.rutinaVistaPrevia.RutinaVistaPreviaActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity
             android:name=".splashscreen.SplashActivity"
