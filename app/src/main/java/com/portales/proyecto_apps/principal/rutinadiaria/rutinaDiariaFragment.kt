@@ -82,7 +82,7 @@ class rutinaDiariaFragment : Fragment() {
     }
 
     private fun previewDeRutina(id: String){
-        val action = rutinasComunidadFragmentDirections.actionRutinasComunidadFragmentToPreviewRoutineFragment()
+        val action = rutinaDiariaFragmentDirections.actionRutinaDiariaFragmentToPreviewRoutineFragment()
 
         action.selectedRoutineId = id
 
