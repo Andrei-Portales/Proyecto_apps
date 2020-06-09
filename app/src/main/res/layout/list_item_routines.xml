@@ -16,7 +16,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(rutinaModel)">
 
         <ImageView
             android:id="@+id/profile_view_image"
@@ -28,7 +29,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/community_icon"/>
+            tools:srcCompat="@drawable/community_icon"
+            app:intensityImage="@{rutinaModel}"/>
 
         <TextView
             android:id="@+id/routine_name_title"
@@ -42,7 +44,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/profile_view_image"
             app:layout_constraintTop_toTopOf="@+id/profile_view_image"
-            tools:text="Wednesday" />
+            tools:text="Wednesday"
+            app:routineName="@{rutinaModel}"/>
 
         <TextView
             android:id="@+id/routine_user_string"
@@ -53,7 +56,8 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/routine_name_title"
             app:layout_constraintTop_toBottomOf="@+id/routine_name_title"
-            tools:text="Excellent!!!" />
+            tools:text="Excellent!!!"
+            app:userCreated="@{rutinaModel}"/>
 
         <TextView
             android:id="@+id/routine_description_string"
@@ -64,7 +68,8 @@
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="@+id/routine_name_title"
             app:layout_constraintStart_toStartOf="@+id/routine_name_title"
-            app:layout_constraintTop_toBottomOf="@+id/routine_user_string" />
+            app:layout_constraintTop_toBottomOf="@+id/routine_user_string"
+            app:routineDescription="@{rutinaModel}"/>
 
         <TextView
             android:id="@+id/duracion_rutina_string"
@@ -74,6 +79,7 @@
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="@+id/routine_name_title"
             app:layout_constraintStart_toEndOf="@+id/routine_user_string"
-            app:layout_constraintTop_toBottomOf="@+id/routine_name_title" />
+            app:layout_constraintTop_toBottomOf="@+id/routine_name_title"
+            app:routineDuration="@{rutinaModel}"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
