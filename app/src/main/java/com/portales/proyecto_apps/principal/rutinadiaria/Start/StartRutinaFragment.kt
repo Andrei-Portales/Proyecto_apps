@@ -46,18 +46,9 @@ class StartRutinaFragment : Fragment() {
 
         if(day == Calendar.MONDAY){
 
-            binding.Titulo1.text = modelLiveData.value?.get(0)?.title.toString()
-            binding.Descripcion1.text = modelLiveData.value?.get(0)?.title.toString()
-
         }else if (day == Calendar.TUESDAY){
 
-            binding.Titulo1.text = modelLiveData.value?.get(0)?.title.toString()
-            binding.Descripcion1.text = modelLiveData.value?.get(0)?.title.toString()
-
         }else if (day == Calendar.WEDNESDAY){
-
-            binding.Titulo1.text = modelLiveData.value?.get(0)?.title.toString()
-            binding.Descripcion1.text = modelLiveData.value?.get(0)?.title.toString()
 
         }else if (day == Calendar.THURSDAY){
 

@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_rutinaDiariaFragment_to_previewRoutineFragment"
             app:destination="@id/previewRoutineFragment" />
+        <action
+            android:id="@+id/action_rutinaDiariaFragment_to_rutinasComunidadFragment"
+            app:destination="@id/rutinasComunidadFragment" />
     </fragment>
     <fragment
         android:id="@+id/publicarRutinaFragment"
