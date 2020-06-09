@@ -1,5 +1,6 @@
 package com.portales.proyecto_apps.principal.publicar.addroutine
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,12 +9,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.portales.proyecto_apps.R
 import com.portales.proyecto_apps.databinding.FragmentAddRoutineBinding
 import com.portales.proyecto_apps.principal.publicacionmodel.EjercicioModel
 import com.portales.proyecto_apps.principal.publicacionmodel.RutinaModel
+import kotlin.random.Random
 
 /**
  * A simple [Fragment] subclass.
@@ -24,6 +26,8 @@ class addRoutineFragment : Fragment() {
     private lateinit var viewModel: AddRoutineViewModel
     private lateinit var viewModelFactory: AddRoutineViewModelFactory
     private lateinit var binding: FragmentAddRoutineBinding
+    private var ejerciciosId = ArrayList<EjercicioModel>()
+    private lateinit var adapter: AddRoutineRecyclerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,container: ViewGroup?,
@@ -38,61 +42,60 @@ class addRoutineFragment : Fragment() {
             .get(AddRoutineViewModel::class.java)
 
         binding.lifecycleOwner = this
-
+        adapter = AddRoutineRecyclerAdapter(context as Context, ejerciciosId)
+        binding.RecyclerEjerciciosAdd.setLayoutManager(LinearLayoutManager(context))
+        binding.RecyclerEjerciciosAdd.adapter = adapter
         binding.buttonPublishRoutine.setOnClickListener{
             agregarRutina()
-            navigate()
-
         }
 
+        binding.btnAgregarEjercicio.setOnClickListener {
+            addEjercicio()
+        }
 
+        addEjercicio()
 
         return binding.root
     }
 
-    private fun verifier():Boolean{
-
-        return (
-                binding.inserDescriptionExcercise1.text.isNullOrEmpty()||
-                        binding.inserDescriptionExcercise2.text.isNullOrEmpty()||
-                        binding.inserDescriptionExcercise3.text.isNullOrEmpty()||
-                        binding.insertNameExcercise1.text.isNullOrEmpty()||
-                        binding.insertNameExcercise2.text.isNullOrEmpty()||
-                        binding.insertNameExcercise3.text.isNullOrEmpty()||
-                        binding.insertYoutubeLink1.text.isNullOrEmpty()||
-                        binding.insertYoutubeLink2.text.isNullOrEmpty()||
-                        binding.insertYoutubeLink3.text.isNullOrEmpty()||
-                        binding.routineNameField.text.isNullOrEmpty()||
-                        binding.newRoutineDescriptionField.text.isNullOrEmpty()||
-                        binding.routineDurationField.text.isNullOrEmpty()
-
-                )
+    private fun addEjercicio(){
+        ejerciciosId.add(EjercicioModel())
+        adapter.notifyDataSetChanged()
     }
+
+
+    fun rand(start: Int, end: Int): Int {
+        require(start <= end) { "Illegal Argument" }
+        return Random(System.nanoTime()).nextInt(start, end + 1)
+    }
+
+    fun main() {
+        val start = 5
+        val end = 9
+
+        for (i in 1..5) println(rand(start, end))
+    }
+
+
     private fun agregarRutina(){
-        val ejercicios: ArrayList<EjercicioModel> = arrayListOf<EjercicioModel>(
-            EjercicioModel(title = binding.insertNameExcercise1.text.toString(),description = binding.inserDescriptionExcercise1.text.toString(),video =  binding.insertYoutubeLink1.text.toString()),
-            EjercicioModel(title = binding.insertNameExcercise2.text.toString(),description = binding.inserDescriptionExcercise2.text.toString(),video =  binding.insertYoutubeLink2.text.toString()),
-            EjercicioModel(title = binding.insertNameExcercise3.text.toString(),description = binding.inserDescriptionExcercise3.text.toString(),video =  binding.insertYoutubeLink3.text.toString()))
+        try {
+            context?.let { viewModel.agregarRutina(
+                RutinaModel(
+                    title = binding.routineNameField.text.toString(),
+                    description = binding.newRoutineDescriptionField.text.toString(),
+                    time = binding.routineDurationField.text.toString().toFloat(),
+                    exercises = ejerciciosId
+                ), it, view?.findNavController())}
 
-        context?.let { viewModel.agregarRutina(
-            RutinaModel(
-                title = binding.routineNameField.text.toString(),
-                description = binding.newRoutineDescriptionField.text.toString(),
-                time = binding.routineDurationField.text.toString().toFloat(),
-                exercises = ejercicios
-
-            ), it) }
+        }catch (e:Exception){
+            Toast.makeText(context, "Tienes campos vacios o invalidos",Toast.LENGTH_SHORT).show()
+        }
 
 
     }
 
     private fun navigate(){
-        if (!verifier()) {
-            val action = addRoutineFragmentDirections.actionAddRoutineFragmentToPublicarRutinaFragment()
-            view?.findNavController()?.navigate(action)
-        }
-        else{
-            Toast.makeText(context,"Porfavor llene los campos vacios", Toast.LENGTH_LONG).show()
-        }
+        val action = addRoutineFragmentDirections.actionAddRoutineFragmentToPublicarRutinaFragment()
+        view?.findNavController()?.navigate(action)
     }
 }
